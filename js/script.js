@@ -51,7 +51,7 @@ window.addEventListener('keydown', (event) => {
         caseNumber(event.key);
     } else if (event.code === 'Backspace') {
         caseDel();
-    } else if (event.code === 'Space' || event.code === 'Escape') {
+    } else if (event.code === 'Space') {
         caseAc();
     } else if (event.code === 'Enter' || event.code === 'NumpadEnter') {
         caseEnter();
@@ -82,10 +82,6 @@ function caseNumber(NumberCharacterFromListener) {
         enteredCharacter += NumberCharacterFromListener;
         display.textContent = enteredCharacter;
     }
-    /* else if (previousKey === "operator") { //if the previously entered key is an operator, we begin to form the next operand
-           enteredCharacter = NumberCharacterFromListener;
-           display.textContent = enteredCharacter;
-       } */
     previousKey = "number";
 }
 
