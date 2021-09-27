@@ -69,7 +69,7 @@ window.addEventListener('keydown', (event) => {
     } else if (event.key === '/' || event.code === 'NumpadDivide') {
         const eventName = 'divide';
         caseOperator(event.key, eventName);
-    };
+    }
 });
 
 function caseNumber(NumberCharacterFromListener) {
