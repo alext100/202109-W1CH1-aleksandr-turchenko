@@ -73,7 +73,7 @@ window.addEventListener('keydown', (event) => {
 });
 
 function caseNumber(NumberCharacterFromListener) {
-    if (display.textContent === "0") {
+    if (display.textContent === "0" || previousKey === "operator") {
         enteredCharacter = NumberCharacterFromListener;
         display.textContent = enteredCharacter;
     } else if (previousKey === "enter") {
@@ -81,10 +81,11 @@ function caseNumber(NumberCharacterFromListener) {
     } else if (previousKey !== "operator") { //if the previously entered key is not an operator, we form the operand using concatenation
         enteredCharacter += NumberCharacterFromListener;
         display.textContent = enteredCharacter;
-    } else if (previousKey === "operator") { //if the previously entered key is an operator, we begin to form the next operand
-        enteredCharacter = NumberCharacterFromListener;
-        display.textContent = enteredCharacter;
     }
+    /* else if (previousKey === "operator") { //if the previously entered key is an operator, we begin to form the next operand
+           enteredCharacter = NumberCharacterFromListener;
+           display.textContent = enteredCharacter;
+       } */
     previousKey = "number";
 }
 
